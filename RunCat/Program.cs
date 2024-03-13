@@ -48,7 +48,7 @@ namespace RunCat
     public class RunCatApplicationContext : ApplicationContext
     {
         private const int CPU_TIMER_DEFAULT_INTERVAL = 3000;
-        private const int ANIMATE_TIMER_DEFAULT_INTERVAL = 200;
+        private const int ANIMATE_TIMER_DEFAULT_INTERVAL = 600;
         private PerformanceCounter cpuUsage;
         private ToolStripMenuItem runnerMenu;
         private ToolStripMenuItem themeMenu;
@@ -62,6 +62,8 @@ namespace RunCat
         private string systemTheme = "";
         private string manualTheme = UserSettings.Default.Theme;
         private string speed = UserSettings.Default.Speed;
+        private string level = "low";
+        private string old_level = "low";
         private Icon[] icons;
         private Timer animateTimer = new Timer();
         private Timer cpuTimer = new Timer();
@@ -82,6 +84,18 @@ namespace RunCat
 
             runnerMenu = new ToolStripMenuItem("Runner", null, new ToolStripMenuItem[]
             {
+                new ToolStripMenuItem("GrundfosEye", null, SetRunner)
+                {
+                    Checked = runner.Equals("grundfoseye")
+                },
+                new ToolStripMenuItem("GrundfosEyeLite", null, SetRunner)
+                {
+                    Checked = runner.Equals("grundfoseyelite")
+                },
+                new ToolStripMenuItem("GrundfosEyeColor", null, SetRunner)
+                {
+                    Checked = runner.Equals("grundfoseyecolor")
+                },
                 new ToolStripMenuItem("Cat", null, SetRunner)
                 {
                     Checked = runner.Equals("cat")
@@ -109,6 +123,10 @@ namespace RunCat
                 new ToolStripMenuItem("Dark", null, SetDarkIcons)
                 {
                     Checked = manualTheme.Equals("dark")
+                },
+                new ToolStripMenuItem("Color", null, SetColorIcons)
+                {
+                    Checked = manualTheme.Equals("color")
                 }
             });
 
@@ -207,13 +225,45 @@ namespace RunCat
             }
         }
 
-        private void SetIcons()
+        private void SetIconsWithColor()
+        {
+            ResourceManager rm = Resources.ResourceManager;
+            int capacity = 0;
+            // for color icons.
+            if (runner.Equals("grundfoseyecolor"))
+            {
+                capacity = 3;
+            }
+            else
+            {
+                // default runner is grundfoseyecolor
+                capacity = 3;
+                runner = "grundfoseyecolor";
+            }
+
+            List<Icon> list = new List<Icon>(capacity);
+            for (int i = 0; i < capacity; i++)
+            {
+                list.Add((Icon)rm.GetObject($"{runner}_{level}_{i}"));
+            }
+            icons = list.ToArray();
+        }
+
+        private void SetMonoIcons()
         {
             string prefix = 0 < manualTheme.Length ? manualTheme : systemTheme;
             ResourceManager rm = Resources.ResourceManager;
-            // default runner is cat
-            int capacity = 5;
-            if (runner.Equals("parrot"))
+            // default runner is grundfoseye
+            int capacity = 0;
+            if (runner.Equals("grundfoseye"))
+            {
+                capacity = 3;
+            }
+            else if(runner.Equals("grundfoseyelite"))
+            {
+                capacity = 3;
+            }
+            else if (runner.Equals("parrot"))
             {
                 capacity = 10;
             } 
@@ -221,12 +271,35 @@ namespace RunCat
             {
                 capacity = 14;
             }
+            else if (runner.Equals("cat"))
+            {
+                capacity = 5;
+            }
+            else
+            {
+                // default runner is grundfoseye
+                capacity = 3;
+                runner = "grundfoseye";
+            }
             List<Icon> list = new List<Icon>(capacity);
             for (int i = 0; i < capacity; i++)
             {
                 list.Add((Icon)rm.GetObject($"{prefix}_{runner}_{i}"));
             }
             icons = list.ToArray();
+        }
+        
+        private void SetIcons()
+        {   
+            string prefix = 0 < manualTheme.Length ? manualTheme : systemTheme;
+            if (prefix.Equals("color"))
+            {
+                SetIconsWithColor();
+            }
+            else
+            {
+                SetMonoIcons();
+            }
         }
 
         private void UpdateCheckedState(ToolStripMenuItem sender, ToolStripMenuItem menu)
@@ -302,6 +375,12 @@ namespace RunCat
             manualTheme = "dark";
             SetIcons();
         }
+        private void SetColorIcons(object sender, EventArgs e)
+        {
+            UpdateCheckedState((ToolStripMenuItem)sender, themeMenu);
+            manualTheme = "color";
+            SetIcons();
+        }
         private void UserPreferenceChanged(object sender, UserPreferenceChangedEventArgs e)
         {
             if (e.Category == UserPreferenceCategory.General) UpdateThemeIcons();
@@ -367,8 +446,26 @@ namespace RunCat
         private void CPUTick()
         {
             interval = Math.Min(100, cpuUsage.NextValue()); // Sometimes got over 100% so it should be limited to 100%
+            // update the level.
+            if (interval < 50) 
+            {
+                level = "low";
+            }
+            else if (interval < 80)
+            {
+                level = "middle";
+            }
+            else
+            {
+                level = "high";
+            }
+            if (!level.Equals(old_level))
+            {
+                old_level = level;
+                SetIcons();
+            }
             notifyIcon.Text = $"CPU: {interval:f1}%";
-            interval = 200.0f / (float)Math.Max(1.0f, Math.Min(20.0f, interval / 5.0f));
+            interval = ANIMATE_TIMER_DEFAULT_INTERVAL / (float)Math.Max(1.0f, Math.Min(20.0f, interval / 5.0f));
             _ = interval;
             CPUTickSpeed();
         }

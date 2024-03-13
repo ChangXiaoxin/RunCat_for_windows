@@ -292,4 +292,67 @@
   <data name="light_horse_13" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\resources\horse\light_horse_13.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="dark_grundfoseyelite_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\grundfoseyelite\dark_grundfoseyelite_0.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dark_grundfoseyelite_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\grundfoseyelite\dark_grundfoseyelite_1.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dark_grundfoseyelite_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\grundfoseyelite\dark_grundfoseyelite_2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dark_grundfoseye_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\grundfoseye\dark_grundfoseye_0.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dark_grundfoseye_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\grundfoseye\dark_grundfoseye_1.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dark_grundfoseye_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\grundfoseye\dark_grundfoseye_2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="grundfoseyecolor_high_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\grundfoseyecolor\grundfoseyecolor_high_0.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="grundfoseyecolor_high_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\grundfoseyecolor\grundfoseyecolor_high_1.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="grundfoseyecolor_high_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\grundfoseyecolor\grundfoseyecolor_high_2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="grundfoseyecolor_low_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\grundfoseyecolor\grundfoseyecolor_low_0.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="grundfoseyecolor_low_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\grundfoseyecolor\grundfoseyecolor_low_1.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="grundfoseyecolor_low_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\grundfoseyecolor\grundfoseyecolor_low_2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="grundfoseyecolor_middle_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\grundfoseyecolor\grundfoseyecolor_middle_0.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="grundfoseyecolor_middle_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\grundfoseyecolor\grundfoseyecolor_middle_1.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="grundfoseyecolor_middle_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\grundfoseyecolor\grundfoseyecolor_middle_2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="light_grundfoseyelite_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\grundfoseyelite\light_grundfoseyelite_0.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="light_grundfoseyelite_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\grundfoseyelite\light_grundfoseyelite_1.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="light_grundfoseyelite_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\grundfoseyelite\light_grundfoseyelite_2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="light_grundfoseye_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\grundfoseye\light_grundfoseye_0.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="light_grundfoseye_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\grundfoseye\light_grundfoseye_1.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="light_grundfoseye_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\resources\grundfoseye\light_grundfoseye_2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
